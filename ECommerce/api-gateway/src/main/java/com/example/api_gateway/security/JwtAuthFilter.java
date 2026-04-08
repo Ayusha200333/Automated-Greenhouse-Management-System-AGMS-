@@ -24,7 +24,6 @@ public class JwtAuthFilter implements GlobalFilter{
         ServerHttpRequest request = exchange.getRequest();
         String path = request.getURI().getPath();
 
-        // allow auth token generation endpoint and actuator
         if (path.equals("/auth/token") || path.startsWith("/actuator")) {
             return chain.filter(exchange);
         }
@@ -39,7 +38,6 @@ public class JwtAuthFilter implements GlobalFilter{
         try {
             SecretKey key = Keys.hmacShaKeyFor(jwtSecret.getBytes(StandardCharsets.UTF_8));
             Claims claims = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token).getBody();
-            // optionally add user info to headers
             ServerHttpRequest mutated = request.mutate()
                     .header("X-User-Id", claims.getSubject())
                     .build();
