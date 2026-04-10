@@ -60,28 +60,38 @@ Crop Inventory Service	  8084	Manage crop lifecycle
 └── README.md
 
 ▶️ Step-by-Step Startup Guide
+
 ⚠️ IMPORTANT: Start services in the correct order
 
 1️⃣ Start Config Server (Port 8888)
+
 cd config-server
 mvn clean spring-boot:run
 
 2️⃣ Start Eureka Server (Port 8761)
+
 cd ../eureka-server
 mvn clean spring-boot:run
 
 3️⃣ Start API Gateway (Port 8080)
+
 cd ../api-gateway
 mvn clean spring-boot:run
 
 4️⃣ Start Domain Services
+
 🌿Zone Service (Port 8081)
 cd ../zone-service
 mvn clean spring-boot:run
+
 💧Sensor Telemetry Service (Port 8082)
 cd ../sensor-telemetry-service
 mvn clean spring-boot:run
+
 📊Automation Service (Port 8083)
 cd ../automation-service
 mvn clean spring-boot:run
 
+👨‍💻 Author
+
+Ayusha Wijerathna
