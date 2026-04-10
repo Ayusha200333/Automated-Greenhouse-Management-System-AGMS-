@@ -62,14 +62,23 @@ This project follows a **Microservices Architecture** with:
 ## 📂 Project Structure
 
 agms/
+
 ├── config-server/ 
+
 ├── eureka-server/ 
+
 ├── api-gateway/
+
 ├── zone-service/
+
 ├── sensor-service/ 
+
 ├── automation-service/ 
+
 ├── crop-inventory-service/ 
+
 ├── config-repo/ 
+
 └── README.md
 
 ---
